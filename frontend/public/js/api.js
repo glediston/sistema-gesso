@@ -1,5 +1,5 @@
 // Troque esta constante na hora de subir pra produção.
-export const API_BASE_URL = "http://localhost:3000";
+export const API_BASE_URL = "https://sistema-gesso-backend.onrender.com";
 
 function getToken() {
   return localStorage.getItem("token");
