@@ -13,7 +13,7 @@ import { orcamentosRouter } from "./routes/orcamentos";
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({ origin: process.env.CORS_ORIGIN }));
 app.use(express.json());
 
 app.get("/health", (_req, res) => {
