@@ -1,0 +1,590 @@
+:root {
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-border: #e2e5ea;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-success: #16a34a;
+
+  --status-pendente-bg: #fef3c7;
+  --status-pendente-text: #92400e;
+  --status-aprovado-bg: #dbeafe;
+  --status-aprovado-text: #1e40af;
+  --status-concluido-bg: #dcfce7;
+  --status-concluido-text: #166534;
+  --status-recusado-bg: #fee2e2;
+  --status-recusado-text: #991b1b;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --header-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* --- Header / menu comum --- */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--header-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.app-header__inner {
+  height: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+}
+
+.app-header__brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.app-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.app-header__nav a {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  padding: var(--spacing-2) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.app-header__nav a.is-active,
+.app-header__nav a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.app-header__logout {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-2) var(--spacing-3);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.app-header__logout:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* --- Layout geral --- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--spacing-6) var(--spacing-4) var(--spacing-8);
+}
+
+.page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-6);
+}
+
+.page__header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.page__header-acoes {
+  display: flex;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.voltar {
+  display: inline-block;
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.voltar:hover {
+  color: var(--color-primary);
+}
+
+/* --- Login --- */
+
+body.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-card {
+  background: var(--color-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 320px;
+}
+
+.login-card h1 {
+  margin: 0 0 var(--spacing-6);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* --- Formulários --- */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-3);
+}
+
+input,
+select,
+textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn {
+  padding: 0.65rem 1.1rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-surface);
+}
+
+.btn--danger {
+  background: var(--color-danger);
+}
+
+.btn--danger:hover {
+  background: var(--color-danger-hover);
+}
+
+.btn--sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.form-full {
+  margin-top: var(--spacing-6);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.form-row > * {
+  flex: 1;
+}
+
+.form-actions {
+  margin-top: var(--spacing-6);
+  display: flex;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.mensagem {
+  margin-top: var(--spacing-4);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-sm);
+}
+
+.mensagem.erro {
+  color: var(--status-recusado-text);
+  background: var(--status-recusado-bg);
+}
+
+.mensagem.sucesso {
+  color: var(--status-concluido-text);
+  background: var(--status-concluido-bg);
+}
+
+/* --- Cards / listas --- */
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-4);
+}
+
+.card + .card {
+  margin-top: var(--spacing-3);
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.lista-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-4);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.lista-item:hover {
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+  transform: translateY(-1px);
+}
+
+.lista-item__titulo {
+  font-weight: 600;
+}
+
+.lista-item__sub {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.lista-vazia {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--spacing-8) 0;
+}
+
+.busca {
+  margin-bottom: var(--spacing-4);
+}
+
+/* --- Badges de status --- */
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge--pendente {
+  background: var(--status-pendente-bg);
+  color: var(--status-pendente-text);
+}
+
+.badge--aprovado {
+  background: var(--status-aprovado-bg);
+  color: var(--status-aprovado-text);
+}
+
+.badge--concluido {
+  background: var(--status-concluido-bg);
+  color: var(--status-concluido-text);
+}
+
+.badge--recusado {
+  background: var(--status-recusado-bg);
+  color: var(--status-recusado-text);
+}
+
+/* --- Cliente / Orçamento detalhe --- */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.info-grid dt {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.info-grid dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.secao-titulo {
+  font-size: 1.05rem;
+  margin: var(--spacing-8) 0 var(--spacing-3);
+}
+
+/* --- Calculadora de orçamento --- */
+
+.ambiente-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+  position: relative;
+}
+
+.ambiente-card__remover {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.ambiente-card__remover:hover {
+  color: var(--color-danger);
+}
+
+.ambiente-card__calculado {
+  margin-top: var(--spacing-3);
+  display: flex;
+  gap: var(--spacing-6);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.ambiente-card__calculado strong {
+  color: var(--color-text);
+}
+
+.resumo {
+  margin-top: var(--spacing-6);
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.resumo table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.resumo th,
+.resumo td {
+  text-align: left;
+  padding: var(--spacing-2) var(--spacing-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.resumo-totais {
+  margin-top: var(--spacing-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-3);
+}
+
+.resumo-totais .card {
+  text-align: center;
+}
+
+.resumo-totais .card span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-1);
+}
+
+.resumo-totais .card strong {
+  font-size: 1.15rem;
+}
+
+.resumo-totais .card.destaque strong {
+  color: var(--color-primary);
+}
+
+/* --- Status / ações do orçamento --- */
+
+.status-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin: var(--spacing-4) 0;
+}
+
+/* --- Financeiro --- */
+
+.filtro-periodo {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+  flex-wrap: wrap;
+}
+
+.filtro-periodo label {
+  margin-top: 0;
+}
+
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+}
+
+.indicadores .card {
+  text-align: center;
+}
+
+.indicadores .card span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-1);
+}
+
+.indicadores .card strong {
+  font-size: 1.3rem;
+}
+
+/* --- Modal simples (cadastro de cliente) --- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  z-index: 100;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-6);
+  width: 100%;
+  max-width: 400px;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+/* --- Responsivo --- */
+
+@media (max-width: 640px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .lista-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-header__inner {
+    padding: 0 var(--spacing-3);
+  }
+
+  .app-header__nav {
+    gap: var(--spacing-3);
+  }
+}

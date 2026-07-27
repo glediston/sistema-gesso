@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gesso — Orçamento</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="app-header" class="app-header"></header>
+
+  <main class="page">
+    <a href="#" id="link-voltar" class="voltar">&larr; Voltar para o cliente</a>
+
+    <p id="mensagem" class="mensagem" hidden></p>
+
+    <div class="page__header">
+      <h1>Orçamento <span id="orcamento-status"></span></h1>
+    </div>
+
+    <div class="status-acoes" id="status-acoes"></div>
+
+    <h2 class="secao-titulo">Ambientes</h2>
+    <div class="resumo">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Ambiente</th>
+              <th>Largura</th>
+              <th>Comprimento</th>
+              <th>Área (m²)</th>
+              <th>Linear (m)</th>
+            </tr>
+          </thead>
+          <tbody id="resumo-tabela"></tbody>
+        </table>
+      </div>
+
+      <div class="resumo-totais">
+        <div class="card">
+          <span>Área total</span>
+          <strong id="resumo-area-total">—</strong>
+        </div>
+        <div class="card">
+          <span>Linear total</span>
+          <strong id="resumo-linear-total">—</strong>
+        </div>
+        <div class="card">
+          <span>Placas necessárias</span>
+          <strong id="resumo-placas">—</strong>
+        </div>
+        <div class="card">
+          <span>Mão de obra (área)</span>
+          <strong id="resumo-valor-area">—</strong>
+        </div>
+        <div class="card">
+          <span>Valor linear</span>
+          <strong id="resumo-valor-linear">—</strong>
+        </div>
+        <div class="card">
+          <span>Custos extras</span>
+          <strong id="resumo-custos-extras">—</strong>
+        </div>
+        <div class="card destaque">
+          <span>Valor total</span>
+          <strong id="resumo-valor-total">—</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="btn-pdf" class="btn btn--secondary">Baixar PDF</button>
+      <button type="button" id="btn-whatsapp" class="btn btn--secondary">Enviar por WhatsApp</button>
+      <button type="button" id="btn-excluir" class="btn btn--danger">Excluir</button>
+    </div>
+  </main>
+
+  <script type="module" src="js/orcamento.js"></script>
+</body>
+</html>

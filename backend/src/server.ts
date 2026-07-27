@@ -5,6 +5,10 @@ import express from "express";
 import jwt from "jsonwebtoken";
 import { z } from "zod";
 import { prisma } from "./lib/prisma";
+import { autenticar } from "./middlewares/auth";
+import { clientesRouter } from "./routes/clientes";
+import { financeiroRouter } from "./routes/financeiro";
+import { orcamentosRouter } from "./routes/orcamentos";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -56,6 +60,11 @@ app.post("/login", async (req, res) => {
 
   res.json({ token });
 });
+
+app.use(autenticar);
+app.use(clientesRouter);
+app.use(orcamentosRouter);
+app.use(financeiroRouter);
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

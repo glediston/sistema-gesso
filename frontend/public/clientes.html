@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gesso — Clientes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="app-header" class="app-header"></header>
+
+  <main class="page">
+    <div class="page__header">
+      <h1>Clientes</h1>
+      <button type="button" id="btn-novo-cliente" class="btn">Novo Cliente</button>
+    </div>
+
+    <div class="busca">
+      <input type="search" id="busca-nome" placeholder="Buscar cliente por nome..." />
+    </div>
+
+    <p id="mensagem" class="mensagem" hidden></p>
+
+    <div id="lista-clientes" class="lista"></div>
+  </main>
+
+  <script type="module" src="js/clientes.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gesso — Novo Orçamento</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="app-header" class="app-header"></header>
+
+  <main class="page">
+    <a href="#" id="link-voltar" class="voltar">&larr; Voltar para o cliente</a>
+
+    <div class="page__header">
+      <h1>Novo Orçamento</h1>
+    </div>
+
+    <p id="mensagem" class="mensagem" hidden></p>
+
+    <h2 class="secao-titulo">Ambientes</h2>
+    <div id="lista-ambientes"></div>
+    <button type="button" id="btn-add-ambiente" class="btn btn--secondary">+ Adicionar ambiente</button>
+
+    <h2 class="secao-titulo">Valores</h2>
+    <div class="form-row">
+      <div>
+        <label for="preco-m2">Preço por m² (mão de obra)</label>
+        <input type="number" id="preco-m2" min="0" step="0.01" value="0" />
+      </div>
+      <div>
+        <label for="preco-linear">Preço por metro linear</label>
+        <input type="number" id="preco-linear" min="0" step="0.01" value="0" />
+      </div>
+      <div>
+        <label for="custos-extras">Custos extras (opcional)</label>
+        <input type="number" id="custos-extras" min="0" step="0.01" value="0" />
+      </div>
+    </div>
+
+    <h2 class="secao-titulo">Resumo</h2>
+    <div class="resumo">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Ambiente</th>
+              <th>Largura</th>
+              <th>Comprimento</th>
+              <th>Área (m²)</th>
+              <th>Linear (m)</th>
+            </tr>
+          </thead>
+          <tbody id="resumo-tabela"></tbody>
+        </table>
+      </div>
+
+      <div class="resumo-totais">
+        <div class="card">
+          <span>Área total</span>
+          <strong id="resumo-area-total">0,00 m²</strong>
+        </div>
+        <div class="card">
+          <span>Linear total</span>
+          <strong id="resumo-linear-total">0,00 m</strong>
+        </div>
+        <div class="card">
+          <span>Placas necessárias</span>
+          <strong id="resumo-placas">0</strong>
+        </div>
+        <div class="card">
+          <span>Mão de obra (área)</span>
+          <strong id="resumo-valor-area">R$ 0,00</strong>
+        </div>
+        <div class="card">
+          <span>Valor linear</span>
+          <strong id="resumo-valor-linear">R$ 0,00</strong>
+        </div>
+        <div class="card">
+          <span>Custos extras</span>
+          <strong id="resumo-custos-extras">R$ 0,00</strong>
+        </div>
+        <div class="card destaque">
+          <span>Valor total</span>
+          <strong id="resumo-valor-total">R$ 0,00</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="btn-salvar" class="btn">Salvar Orçamento</button>
+    </div>
+  </main>
+
+  <template id="template-ambiente">
+    <div class="ambiente-card" data-ambiente>
+      <button type="button" class="ambiente-card__remover" title="Remover ambiente">&times;</button>
+
+      <label>Nome do ambiente</label>
+      <input type="text" data-campo="nome" placeholder="Ex.: Sala" />
+
+      <div class="form-row">
+        <div>
+          <label>Largura (m)</label>
+          <input type="number" data-campo="largura" min="0" step="0.01" value="0" />
+        </div>
+        <div>
+          <label>Comprimento (m)</label>
+          <input type="number" data-campo="comprimento" min="0" step="0.01" value="0" />
+        </div>
+      </div>
+
+      <div class="ambiente-card__calculado">
+        <span>Área: <strong data-saida="area">0,00 m²</strong></span>
+        <span>Linear: <strong data-saida="linear">0,00 m</strong></span>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="js/orcamento-novo.js"></script>
+</body>
+</html>

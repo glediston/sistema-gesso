@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gesso — Financeiro</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="app-header" class="app-header"></header>
+
+  <main class="page">
+    <div class="page__header">
+      <h1>Financeiro</h1>
+    </div>
+
+    <div class="filtro-periodo">
+      <div>
+        <label for="periodo">Mês / Ano</label>
+        <input type="month" id="periodo" />
+      </div>
+    </div>
+
+    <p id="mensagem" class="mensagem" hidden></p>
+
+    <div class="indicadores">
+      <div class="card">
+        <span>Total ganho no período</span>
+        <strong id="total-ganho">R$ 0,00</strong>
+      </div>
+      <div class="card">
+        <span>Pendentes</span>
+        <strong id="contagem-pendente">0</strong>
+      </div>
+      <div class="card">
+        <span>Aprovados</span>
+        <strong id="contagem-aprovado">0</strong>
+      </div>
+      <div class="card">
+        <span>Concluídos</span>
+        <strong id="contagem-concluido">0</strong>
+      </div>
+      <div class="card">
+        <span>Recusados</span>
+        <strong id="contagem-recusado">0</strong>
+      </div>
+    </div>
+
+    <h2 class="secao-titulo">Últimos orçamentos concluídos</h2>
+    <div id="lista-concluidos" class="lista"></div>
+  </main>
+
+  <script type="module" src="js/financeiro.js"></script>
+</body>
+</html>

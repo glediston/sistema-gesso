@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gesso — Cliente</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="app-header" class="app-header"></header>
+
+  <main class="page">
+    <a href="clientes.html" class="voltar">&larr; Voltar para Clientes</a>
+
+    <p id="mensagem" class="mensagem" hidden></p>
+
+    <div class="page__header">
+      <h1 id="cliente-nome">Carregando...</h1>
+      <div class="page__header-acoes">
+        <button type="button" id="btn-editar-cliente" class="btn btn--secondary">Editar Cliente</button>
+        <button type="button" id="btn-novo-orcamento" class="btn">Novo Orçamento</button>
+      </div>
+    </div>
+
+    <dl class="info-grid">
+      <div>
+        <dt>Telefone</dt>
+        <dd id="cliente-telefone">—</dd>
+      </div>
+      <div>
+        <dt>Endereço</dt>
+        <dd id="cliente-endereco">—</dd>
+      </div>
+    </dl>
+
+    <h2 class="secao-titulo">Orçamentos</h2>
+    <div id="lista-orcamentos" class="lista"></div>
+  </main>
+
+  <script type="module" src="js/cliente.js"></script>
+</body>
+</html>
