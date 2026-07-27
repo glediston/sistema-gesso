@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Gesso — Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="login-card">
+    <h1>Sistema Gesso</h1>
+
+    <form id="login-form">
+      <label for="login">Login</label>
+      <input type="text" id="login" name="login" autocomplete="username" required />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" autocomplete="current-password" required />
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p id="mensagem" class="mensagem" hidden></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
