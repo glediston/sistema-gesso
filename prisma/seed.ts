@@ -9,11 +9,11 @@ async function main() {
   const senhaCriptografada = await bcrypt.hash("12345678", 10);
 
   const usuario = await prisma.usuario.upsert({
-    where: { email: "vidal@sistema-gesso.com" },
+    where: { login: "vidal" },
     update: {},
     create: {
       nome: "vidal",
-      email: "vidal@sistema-gesso.com",
+      login: "vidal",
       senha: senhaCriptografada,
     },
   });

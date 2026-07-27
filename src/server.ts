@@ -29,7 +29,7 @@ app.post("/login", async (req, res) => {
 
   const { login, senha } = parsed.data;
 
-  const usuario = await prisma.usuario.findUnique({ where: { email: login } });
+  const usuario = await prisma.usuario.findUnique({ where: { login } });
 
   if (!usuario) {
     res.status(401).json({ error: "Credenciais inválidas" });
@@ -48,7 +48,7 @@ app.post("/login", async (req, res) => {
     throw new Error("JWT_SECRET is not set");
   }
 
-  const token = jwt.sign({ sub: usuario.id, email: usuario.email }, jwtSecret, {
+  const token = jwt.sign({ sub: usuario.id, login: usuario.login }, jwtSecret, {
     expiresIn: "1h",
   });
 

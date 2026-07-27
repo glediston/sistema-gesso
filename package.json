@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "tsx watch src/server.ts"
   },
   "repository": {
@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/glediston/sistema-gesso#readme",
   "devDependencies": {
+    "@swc/core": "^1.15.46",
+    "@swc/jest": "^0.2.39",
     "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^26.1.1",
     "@types/pg": "^8.20.0",
+    "jest": "^30.4.2",
     "prisma": "^7.9.0",
     "tsx": "^4.23.1",
     "typescript": "^7.0.2"
