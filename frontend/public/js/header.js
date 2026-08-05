@@ -11,7 +11,7 @@ export function renderHeader(paginaAtiva) {
 
   container.innerHTML = `
     <div class="app-header__inner">
-      <span class="app-header__brand">Sistema Gesso</span>
+      <span class="app-header__brand"><img src="img/logo.png" alt="VE Gesso" /> Sistema Gesso</span>
       <nav class="app-header__nav">
         ${links
           .map(
